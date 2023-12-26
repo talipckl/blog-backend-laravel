@@ -72,8 +72,6 @@ class BlogController extends Controller
         }
     }
 
-
-
     /**
      * Store a newly created resource in storage.
      */
@@ -91,7 +89,7 @@ class BlogController extends Controller
             $data = new Blog($request_data);
             $data->save();
             $user = auth('api')->user();
-            event(new UserCreateBlogEvent($user, $data));
+         //   event(new UserCreateBlogEvent($user, $data));
 
             return BlogResource::make($data);
         } catch (\Exception $e) {
